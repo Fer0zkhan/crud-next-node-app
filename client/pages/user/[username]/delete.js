@@ -2,9 +2,9 @@ import Link from 'next/link';
 import Layout from '../../../components/Layout';
 import { useState } from 'react';
 import axios from 'axios';
-import Router,{ useRouter } from 'next/router';
+import Router, { useRouter } from 'next/router';
 
-const Delete = ({data}) => {
+const Delete = ({ data }) => {
 
     const id = 1;
     const [dialogMsg, setDailogState] = useState(false);
@@ -23,7 +23,7 @@ const Delete = ({data}) => {
             seterror(response.data.message);
             console.log(response);
             setDailogState(true);
-            if(response.data.message == 'Data Deleted') {
+            if (response.data.message == 'Data Deleted') {
                 Router.push('/');
             }
         }).catch(function (error) {
@@ -65,8 +65,7 @@ const Delete = ({data}) => {
 
 export async function getServerSideProps({ query }) {
     const data = await query;
-
-    return {props : {data}}
+    return { props: { data } }
 }
 
 export default Delete;

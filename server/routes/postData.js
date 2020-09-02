@@ -21,7 +21,7 @@ postData.post('/postData', async (req, res) => {
         if (checkUser == null) {
             const saveNewUser = await newUser.save();
             console.log('dataSave');
-            res.json({"message": "Data Save"});
+            res.json({ "message": "Data Save" });
         }
 
     } catch (err) {
@@ -29,9 +29,9 @@ postData.post('/postData', async (req, res) => {
     }
 });
 
-postData.post('/findData', async(req, res) => {
+postData.post('/findData', async (req, res) => {
     try {
-        const data = await User.findOne({username: req.body.username});
+        const data = await User.findOne({ username: req.body.username });
         res.json(data);
     } catch (error) {
         res.json(error);

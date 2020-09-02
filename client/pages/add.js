@@ -1,7 +1,7 @@
 import Layout from '../components/Layout';
 import { useState } from 'react';
 import axios from 'axios';
-import Router,{ useRouter } from 'next/router';
+import Router, { useRouter } from 'next/router';
 import Link from 'next/link';
 
 
@@ -25,7 +25,7 @@ const Add = () => {
             seterror(response.data.message);
             console.log(response);
             setDailogState(true);
-            if(response.data.message == 'Data Save'){
+            if (response.data.message == 'Data Save') {
                 Router.push('/');
             }
             clearData();
